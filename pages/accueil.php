@@ -16,12 +16,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/bg.css">
         <title>Document</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="accueil.php">Objets</a>
+                <a class="navbar-brand fw-bold" href="accueil.php">Filtrer par Categorie</a>
                 
                 <form class="d-flex me-auto ms-3" action="accueil.php" method="get">
                 <select name="filtre" id="filtre" class="form-select me-2">
@@ -47,7 +48,7 @@
                 <form action="form-recherche.php" method="get" class="row g-2">
                 <div class="col-md-4">
                     <select name="categorie" class="form-select">
-                    <option value="">Catégorie</option>
+                    <option value=""></option>
                     <?php foreach($categories as $categorie) { ?>
                         <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
                     <?php } ?>
@@ -71,7 +72,7 @@
                         <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
                         <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
                         <hr>
-                        <h6 class="text-muted">Retour : <?= $objet['date_retour'] ?></h6>
+                        <p class="text-light">Retour : <?= ajustDate($objet['date_retour']) ?></p>
                     </div>
                     <div class="position-absolute top-0 end-0 p-2">
                         <span class="badge bg-danger"><?= $objet['nom_categorie']  ?></span>
