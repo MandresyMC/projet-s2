@@ -10,6 +10,6 @@
         $mdp = htmlspecialchars(trim($_POST['mdp']));
 
     inscrire($nom, $date_de_naissance, $genre, $email, $ville, $mdp, $image_profil);
-    header('Location: ../pages/accueil.php');
+    header('Location: ../accueil.php');
 
 ?>
