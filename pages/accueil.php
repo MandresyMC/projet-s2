@@ -19,50 +19,68 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Liste de tous les objet objets</h1>
-        <form action="accueil.php">
-            <label for="filtre">Filtrer</label>
-            <select name="filtre" id="filtre">
-                <option value="">Tous</option>
-                <?php foreach($categories as $categorie) { ?>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="accueil.php">Objets</a>
+                
+                <form class="d-flex me-auto ms-3" action="accueil.php" method="get">
+                <select name="filtre" id="filtre" class="form-select me-2">
+                    <option value="">Tous</option>
+                    <?php foreach($categories as $categorie) { ?>
                     <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
-                <?php } ?>
-            </select>
-            <input type="submit" value="Filtrer">
-        </form>
-        <h3>Search</h3>
-        <form action="form-recherche.php" method="get">
-            <select name="categorie" id="">
-                <option value="">Categorie</option>
-                <?php foreach($categories as $categorie) { ?>
-                    <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
-                <?php } ?>
-            </select>
-            <input type="text" name="nom_objet">
-            <button>Search</button>
-        </form>
-        <form action="../inc/deconnexion.php">
-            <input type="submit" value="Déconnecter">
-        </form>
-        <br>
-        <div class="container">
-            <div class="row">
-            <?php foreach($objets as $objet) { ?>
+                    <?php } ?>
+                </select>
+                <button class="btn btn-outline-light" type="submit">Filtrer</button>
+                </form>
+
+                <form class="d-flex" action="../inc/deconnexion.php">
+                <button type="submit" class="btn btn-outline-danger">Déconnecter</button>
+                </form>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Liste de tous les objets</h1>
+
+            <div class="card p-3 mb-4 shadow-sm">
+                <h3>Recherche</h3>
+                <form action="form-recherche.php" method="get" class="row g-2">
+                <div class="col-md-4">
+                    <select name="categorie" class="form-select">
+                    <option value="">Catégorie</option>
+                    <?php foreach($categories as $categorie) { ?>
+                        <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" name="nom_objet" class="form-control" placeholder="Nom de l'objet">
+                </div>
                 <div class="col-md-3">
-                    <div class="card mt-3">
-                        <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
-                            <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
-                            <hr>
-                            <h5 class=""> <?= $objet['date_retour'] ?></h5>
-                        </div>
-                        <div class="position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-danger"><?= $objet['nom_categorie']  ?></button>
-                        </div>
+                    <button type="submit" class="btn btn-primary w-100">Search</button>
+                </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <?php foreach($objets as $objet) { ?>
+                <div class="col-md-3">
+                    <div class="card mt-3 position-relative shadow-sm">
+                    <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
+                        <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
+                        <hr>
+                        <h6 class="text-muted">Retour : <?= $objet['date_retour'] ?></h6>
+                    </div>
+                    <div class="position-absolute top-0 end-0 p-2">
+                        <span class="badge bg-danger"><?= $objet['nom_categorie']  ?></span>
+                    </div>
                     </div>
                 </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
+
     </body>
 </html>
