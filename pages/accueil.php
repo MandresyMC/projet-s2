@@ -29,30 +29,29 @@
         </select>
         <input type="submit" value="Filtrer">
     </form>
+    <form action="../inc/deconnexion.php">
+        <input type="submit" value="Déconnecter">
+    </form>
     <br>
+    <div class="container">
+        <div class="row">
+        <?php foreach($objets as $objet) { ?>
+            <div class="col-md-3">
 
-        <div class="container">
-
-            <div class="row">
-            <?php foreach($objets as $objet) { ?>
-                <div class="col-md-3">
-  
-                        <div class="card mt-3">
-                            <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
-                                <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
-                                <hr>
-                                <h5 class="text-secondary"> <?= $objet['date_retour'] ?></h5>
-                            </div>
-                            <div class="position-absolute top-0 end-0 p-2">
-                                <button type="button" class="btn btn-danger"><?= $objet['nom_categorie']  ?></button>
-                            </div>
+                    <div class="card mt-3">
+                        <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
+                            <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
+                            <hr>
+                            <h5 class="text-secondary"> <?= $objet['date_retour'] ?></h5>
                         </div>
-                </div>
-            <?php } ?>
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <button type="button" class="btn btn-danger"><?= $objet['nom_categorie']  ?></button>
+                        </div>
+                    </div>
             </div>
-
-
+        <?php } ?>
+    </div>
 </body>
 </html>
