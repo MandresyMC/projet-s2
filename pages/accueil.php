@@ -44,7 +44,7 @@
             <h1 class="mb-4">Liste de tous les objets</h1>
 
             <div class="card p-4 mb-4 shadow-sm">
-                <h3 class="mb-3">Recherche</h3>
+                <h4 class="mb-3">Recherche</h4>
                 <form action="form-recherche.php" method="get" class="row g-2 mb-3">
                     <div class="col-md-4">
                         <select name="categorie" class="form-select">
@@ -58,7 +58,7 @@
                         <input type="text" name="nom_objet" class="form-control" placeholder="Nom de l'objet">
                     </div>
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                        <button type="submit" class="btn btn-secondary w-100">Search</button>
                     </div>
                 </form>
             </div>
