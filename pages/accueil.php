@@ -63,24 +63,26 @@
                 </form>
             </div>
 
-            <div class="row">
-                <?php foreach($objets as $objet) { ?>
-                <div class="col-md-3">
-                    <div class="card mt-3 position-relative shadow-sm">
-                    <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
-                        <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
-                        <hr>
-                        <p class="text-secondary">Retour : <?= ajustDate($objet['date_retour']) ?></p>
+            <a href="fiche.php" class="link-offset-2 link-underline link-underline-opacity-0">
+                <div class="row">
+                    <?php foreach($objets as $objet) { ?>
+                    <div class="col-md-3">
+                        <div class="card mt-3 position-relative shadow-sm">
+                        <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?=  $objet['nom_objet'] ?></h5>
+                            <p class="card-text text-secondary"><?= $objet['nom'] ?></p>
+                            <hr>
+                            <p class="text-secondary">Retour : <?= ajustDate($objet['date_retour']) ?></p>
+                        </div>
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <span class="badge bg-danger"><?= $objet['nom_categorie']  ?></span>
+                        </div>
+                        </div>
                     </div>
-                    <div class="position-absolute top-0 end-0 p-2">
-                        <span class="badge bg-danger"><?= $objet['nom_categorie']  ?></span>
-                    </div>
-                    </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
-            </div>
+            </a>
         </div>
 
     </body>
