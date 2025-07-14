@@ -4,55 +4,54 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/css/index.css" rel="stylesheet">
         <title>Document</title>
     </head>
     <body>
+      <div class="container">
+          <br>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="card bg-dark text-light box-shadow mt-5">
+                <div class="card-header mb-3 text-center bg">
+                  <h2 class="p-3 fw-bold">Inscription</h2>
+                </div>
+                <div class="card-body px-4">
+                  <form action="pages/traitement/traitement_inscription.php" method="get" class="login-form">
+                      <label for="inputUser5" class="form-label">User</label>
+                      <input type="text" name="nom" id="inputUser5" class="form-control bg-gris text-dark" aria-labelledby="" required>
 
-      
+                      <label for="inputUser5" class="form-label pt-3">Date de naissance</label>
+                      <input type="date" name="date_de_naissanc" id="inputUser5" class="form-control bg-gris text-dark" aria-labelledby="" required>
 
-    <div class="container">
-        <br>
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <div class="card bg-dark text-light box-shadow mt-5">
-              <div class="card-header mb-3 text-center bg">
-                <h2 class="p-3 fw-bold">Inscription à TikTok</h2>
-              </div>
-              <div class="card-body px-4">
-                <form action="pages/traitement/traitement_inscription.php" method="get" class="login-form">
-                    <label for="inputUser5" class="form-label">User</label>
-                    <input type="text" name="nom" id="inputUser5" class="form-control bg-gris text-dark" aria-labelledby="" required>
+                      <label for="genre" class="form-label pt-3">Choisissez votre sexe</label>
+                      <br><select class="form-select" name="genre" aria-label="Default select example" id="genre" required>
+                          <option value="">Choisir un genre</option>
+                          <option value="Homme">Homme</option>
+                          <option value="Femme">Femme</option>
+                          <option value="Autre">Autre</option>
+                      </select>
+                      
+                      <label for="inputEmail5" class="form-label mt-3">Email address</label>
+                      <input type="email" name="email" id="inputEmail5" class="form-control bg-gris text-dark" aria-labelledby="" required>
 
-                    <label for="inputUser5" class="form-label">Date de naissance</label>
-                    <input type="date" name="date_de_naissanc" id="inputUser5" class="form-control bg-gris text-dark" aria-labelledby="" required>
+                      <label for="inputEmail5" class="form-label mt-3">Ville</label>
+                      <input type="text" name="ville" id="inputEmail5" class="form-control bg-gris text-dark" aria-labelledby="" required>
 
-                    <br><select name="genre" required>
-                        <option value="">Choisir un genre</option>
-                        <option value="Homme">Homme</option>
-                        <option value="Femme">Femme</option>
-                        <option value="Autre">Autre</option>
-                    </select><br>
-                    
-                    <label for="inputEmail5" class="form-label mt-3">Email address</label>
-                    <input type="email" name="email" id="inputEmail5" class="form-control bg-gris text-dark" aria-labelledby="" required>
-
-                    <label for="inputEmail5" class="form-label mt-3">Ville</label>
-                    <input type="text" name="ville" id="inputEmail5" class="form-control bg-gris text-dark" aria-labelledby="" required>
-
-                    <label for="inputPassword5" class="form-label mt-3">Password</label>
-                    <input type="password" name="mdp" id="inputPassword5" class="form-control bg-gris text-dark mb-3" aria-labelledby="passwordHelpBlock" required>
-                    <div class="d-grid gap-2">
-                      <button class="btn btn-dark mb-3 mt-2 bg py-3 btn-focus" type="submit">Confirm</button>
-                    </div>
-                </form>
-                <hr>
-                <p class="text-center fw-medium">Tu as déjà un compte ?  <a href="index.php" class="text link hover">Se connecter</a></p>
+                      <label for="inputPassword5" class="form-label mt-3">Password</label>
+                      <input type="password" name="mdp" id="inputPassword5" class="form-control bg-gris text-dark mb-3" aria-labelledby="passwordHelpBlock" required>
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-dark mb-3 mt-2 bg py-3 btn-focus" type="submit">Confirm</button>
+                      </div>
+                  </form>
+                  <hr>
+                  <p class="text-center fw-medium">Tu as déjà un compte ?  <a href="index.php" class="text link hover">Se connecter</a></p>
+                </div>
               </div>
             </div>
+            <div class="col-md-3"></div>
           </div>
-          <div class="col-md-4"></div>
-        </div>
-    </div>
+      </div>
     </body>
 </html>
