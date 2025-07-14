@@ -115,4 +115,44 @@
         return "Indisponible";
     }
 
+    function get_id ($email, $mdp) {
+        $sql = "SELECT * FROM PS2_membre WHERE email='%s' and mdp='%s'";
+        $sql = sprintf($sql, $email, $mdp);
+        echo $sql;
+        $news_req = mysqli_query(dbconnect(), $sql);
+        $id = mysqli_fetch_assoc($news_req);
+        return $id['id_membre'];
+    }
+
+    function getFiche($id) {
+        $sql = "SELECT * FROM PS2_membre m
+        JOIN PS2_emprunt e ON m.id_membre=e.id_membre
+        JOIN PS2_objet o ON o.id_objet=e.id_objet
+        JOIN PS2_categorie_objet c ON c.id_categorie=o.id_categorie
+        WHERE m.id_membre = %d";
+        $sql = sprintf($sql, $id);
+        $news_req = mysqli_query(dbconnect(), $sql);
+        $result = array();
+        while ($news = mysqli_fetch_assoc($news_req)) {
+            $result[] = $news;
+        }
+        mysqli_free_result($news_req);
+        return $result;
+    }
+
+    function getEmprunt($id_membre) {
+        $sql = "SELECT * FROM PS2_emprunt e
+        JOIN PS2_membre m ON m.id_membre=e.id_membre
+        JOIN PS2_objet o ON o.id_objet=e.id_objet
+        JOIN PS2_categorie_objet c ON c.id_categorie=o.id_categorie
+        WHERE m.id_membre = %d";
+        $sql = sprintf($sql, $id_membre);
+        $news_req = mysqli_query(dbconnect(), $sql);
+        $result = array();
+        while ($news = mysqli_fetch_assoc($news_req)) {
+            $result[] = $news;
+        }
+        mysqli_free_result($news_req);
+        return $result;
+    }
 ?>

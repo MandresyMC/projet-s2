@@ -5,6 +5,8 @@
     $email = $_GET['email'];
     $mdp = $_GET['mdp'];
     $pdp = 'profile.png';
+    $id_membre = get_id($email, $mdp);
+    $_SESSION['id_membre'] = $id_membre;
 
     $row = to_log($email, $mdp);
     if($row === 0) {

@@ -126,3 +126,8 @@ INSERT INTO PS2_emprunt (id_objet, id_membre, date_emprunt, date_retour) VALUES
 (20, 3, '2025-07-09', '2025-07-13'),
 (5, 4, '2025-07-10', '2025-07-14');
 (1, 2, '2025-07-10', '2025-07-24');
+
+CREATE TABLE PS2_retour (
+    id_membre INT,
+    choix INT
+);
