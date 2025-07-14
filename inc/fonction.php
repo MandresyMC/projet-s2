@@ -31,7 +31,7 @@
                 c.nom_categorie
             FROM PS2_objet o
             LEFT JOIN PS2_images_objet i ON o.id_objet = i.id_objet
-            LEFT JOIN PS2_emprunt e ON o.id_objet = e.id_objet AND e.date_retour IS NULL
+            LEFT JOIN PS2_emprunt e ON o.id_objet = e.id_objet
             LEFT JOIN PS2_membre m ON o.id_membre = m.id_membre
             LEFT JOIN PS2_categorie_objet c ON o.id_categorie = c.id_categorie
             WHERE 1=1
@@ -96,6 +96,13 @@
         }
         mysqli_free_result($news_req);
         return $result;
+    }
+
+    function ajustDate($date) {
+        if($date != NULL) {
+            return date('d/m/Y', strtotime($date));
+        }
+        return "Indisponible";
     }
 
 ?>
