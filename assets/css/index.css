@@ -1,0 +1,70 @@
+/* Arrière-plan général */
+body {
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* Carte de connexion */
+.card {
+  border: none;
+  border-radius: 20px;
+  background: rgba(33, 37, 41, 0.85);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* En-tête de la carte */
+.card-header {
+  background: transparent;
+  border: none;
+}
+
+.card-header h2 {
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+/* Champ de formulaire */
+.form-control {
+  border-radius: 10px;
+  border: none;
+  padding: 14px;
+  background-color: #e9ecef;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  background-color: #fff;
+}
+
+/* Label */
+label.form-label {
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* Bouton principal */
+.btn {
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-focus:hover {
+  background-color: #343a40 !important;
+  transform: scale(1.02);
+}
+
+/* Lien inscription */
+a.link {
+  text-decoration: none;
+  color: #0dcaf0;
+  font-weight: 600;
+}
+
+a.link:hover {
+  color: #66d9ff;
+  text-decoration: underline;
+}
