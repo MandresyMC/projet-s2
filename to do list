@@ -5,3 +5,17 @@
 -inscription.php :
     _ ajout form : input text, email, date, password pour compléter les données
     _ ajout input submit pour confirmer et action to traitement-inscription pour l'insertion de données
+
+-traitement-login.php :
+    _ getter toutes les données
+    _ on verifie si il y a le compte, si oui et les données du login sont correspondantes, header accueil.php
+    _ sinon, on revient dans index.php avec une message d'erreur
+
+-traitement_inscription.php :
+    _ on get toutes les données
+    _ on insere dans la table membre de la base de données, et header accueil.php
+
+-accueil.php :
+    _ on affiche tous les objets
+    _ dans chaque objets, on trouve le nom de l'objet, le nom du propriétaire, image de l'objet et date de retour si y a un emprunt en cours
+    _ 
