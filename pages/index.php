@@ -22,9 +22,6 @@
                     <label for="inputUser5" class="form-label">Email</label>
                     <input type="email" name="email" id="inputUser5" class="form-control bg-gris text-dark" aria-labelledby="">
 
-                    <!--<label for="inputEmail5" class="form-label mt-3">Email address</label>
-                    <input type="email" name="email" id="inputEmail5" class="form-control bg-gris text-dark" aria-labelledby="">-->
-
                     <label for="inputPassword5" class="form-label mt-3">Password</label>
                     <input type="password" name="mdp" id="inputPassword5" class="form-control bg-gris text-dark mb-3" aria-labelledby="passwordHelpBlock">
                         <div class="d-grid gap-2">
