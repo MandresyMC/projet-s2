@@ -68,5 +68,67 @@
         return $categories;
     }
 
+    function search($dept, $emp, $ageMax, $ageMin, $page) {
+        $total_rows = count_rows($dept, $emp, $ageMax, $ageMin);
+        $results_per_page = 20;
+        $total_pages = ceil($total_rows / $results_per_page);
+
+        $page = max(1, min($page, $total_pages));
+        $debut = ($page - 1) * $results_per_page;
+        
+        $sql = "SELECT * 
+        FROM employees e
+        JOIN dept_emp p ON e.emp_no=p.emp_no
+        JOIN departments d ON d.dept_no=p.dept_no
+        WHERE 1=1";
+
+        if($dept != NULL) {
+            $sql .= " AND (d.dept_name LIKE '%".$dept."%' OR d.dept_no LIKE '%".$dept."%')";
+        }
+        if($emp != NULL) {
+            $sql .= " AND e.first_name LIKE '%".$emp."%'";
+        }
+        if($ageMax == NULL) $ageMax = 100;
+        if($ageMin == NULL) $ageMin = 0;
+        $sql .= " AND (YEAR(CURDATE()) - YEAR(e.birth_date) BETWEEN $ageMin AND $ageMax)";
+        $debut = ($page - 1) * 20;
+        $sql .= " LIMIT ".$debut.", 20";
+        
+        $news_req = mysqli_query(dbconnect(), $sql);
+        $result = array();
+        while ($news = mysqli_fetch_assoc($news_req)) {
+            $result[] = $news;
+        }
+        mysqli_free_result($news_req);
+        return $result;
+    }
+
+    function count_rows($dept, $emp, $ageMax, $ageMin) {
+        $sql = "SELECT * 
+        FROM employees e
+        JOIN dept_emp p ON e.emp_no=p.emp_no
+        JOIN departments d ON d.dept_no=p.dept_no
+        WHERE 1=1";
+
+        if($dept != NULL) {
+            $sql .= " AND (d.dept_name LIKE '%".$dept."%' OR d.dept_no LIKE '%".$dept."%')";
+        }
+        if($emp != NULL) {
+            $sql .= " AND e.first_name LIKE '%".$emp."%'";
+        }
+        if($ageMax == NULL) $ageMax = 100;
+        if($ageMin == NULL) $ageMin = 0;
+        $sql .= " AND (YEAR(CURDATE()) - YEAR(e.birth_date) BETWEEN $ageMin AND $ageMax)";
+        
+        $news_req = mysqli_query(dbconnect(), $sql);
+        $result = array();
+        while ($news = mysqli_fetch_assoc($news_req)) {
+            $result[] = $news;
+        }
+        mysqli_free_result($news_req);
+
+        $total = count($result);
+        return $total;
+    }
 
 ?>
