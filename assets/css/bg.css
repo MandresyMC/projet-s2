@@ -1,0 +1,82 @@
+/* Arrière-plan général */
+body {
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  color: #f8f9fa;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+/* Navbar personnalisée */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0dcaf0 !important;
+}
+
+.navbar .btn {
+  border-radius: 10px;
+}
+
+/* Carte des objets */
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image des objets */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+}
+
+/* Badge de catégorie */
+.badge {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+/* Boutons */
+.btn-outline-light,
+.btn-primary {
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn-outline-light:hover,
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* Formulaire de recherche */
+.card form select,
+.card form input {
+  border-radius: 10px;
+  border: none;
+}
+
+.card form button {
+  border-radius: 10px;
+}
+
+/* Texte */
+h1, h3 {
+  color: #ffffff;
+  font-weight: bold;
+}
