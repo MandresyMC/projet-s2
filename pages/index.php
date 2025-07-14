@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/index.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Login</title>
   </head>
   <body>
     <div class="container">
