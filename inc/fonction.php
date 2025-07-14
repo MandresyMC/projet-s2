@@ -68,6 +68,16 @@
         return $categories;
     }
 
+    function emprunter($id_objet, $date_emprunt, $date_retour)
+     {
+    $sql = "INSERT INTO PS2_emprunt (id_objet, date_emprunt, date_retour)
+            VALUES ('%s', '%s', '%s', '%s')";
+    $sql = sprintf($sql, $id_objet, $id_membre, $date_emprunt, $date_retour);
+
+    mysqli_query(dbconnect(), $sql);
+    }
+
+
     function search($categorie, $nom_objet) {
        $sql = "SELECT 
                 o.*, 

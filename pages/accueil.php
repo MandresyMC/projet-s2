@@ -20,6 +20,8 @@
         <title>Document</title>
     </head>
     <body>
+
+    <h1>echo</h1>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold" href="accueil.php">Filtrer par Categorie</a>
@@ -33,7 +35,9 @@
                     </select>
                     <button class="btn btn-outline-light" type="submit">Filtrer</button>
                 </form>
-
+                            <h1>
+                    
+                            </h1>
                 <form class="d-flex" action="../inc/deconnexion.php">
                 <button type="submit" class="btn btn-outline-danger">Déconnecter</button>
                 </form>
@@ -63,9 +67,10 @@
                 </form>
             </div>
 
-            <a href="fiche.php" class="link-offset-2 link-underline link-underline-opacity-0">
+            
                 <div class="row">
                     <?php foreach($objets as $objet) { ?>
+                        <a href="emprunt.php?num=<?= $objet['id_objet'] ?>" class="link-offset-2 link-underline link-underline-opacity-0">
                     <div class="col-md-3">
                         <div class="card mt-3 position-relative shadow-sm">
                         <img src="../assets/<?= $objet['nom_image'] ?>" class="card-img-top" alt="<?= $objet['nom_image'] ?>">
@@ -77,12 +82,13 @@
                         </div>
                         <div class="position-absolute top-0 end-0 p-2">
                             <span class="badge bg-danger"><?= $objet['nom_categorie']  ?></span>
+                            </a>                        
                         </div>
                         </div>
                     </div>
                     <?php } ?>
                 </div>
-            </a>
+        
         </div>
 
     </body>
