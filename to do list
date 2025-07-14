@@ -1,0 +1,7 @@
+-index.php :
+    _ ajout form : input email pour l'email, password pour le mot de passe
+    _ ajout input submit pour confirmer et action to traitement-login pour la verification
+
+-inscription.php :
+    _ ajout form : input text, email, date, password pour compléter les données
+    _ ajout input submit pour confirmer et action to traitement-inscription pour l'insertion de données
